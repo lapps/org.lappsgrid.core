@@ -21,7 +21,7 @@
   		<version>1.0.0</version>
   	</dependency>
   	<dependency>
-  		<groupId>org.lappsgrid.test</groupId>
+  		<groupId>org.lappsgrid</groupId>
   		<artifactId>discriminator</artifactId>
   		<version>1.2.0</version>
   	</dependency>
