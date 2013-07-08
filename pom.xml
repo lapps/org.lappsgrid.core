@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.lappsgrid</groupId>
   <artifactId>core</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>LAPPS Core</name>
   <description>Core classes for the LAPPS Grid</description>
   <inceptionYear>2013</inceptionYear>
@@ -18,7 +18,7 @@
   	<dependency>
   		<groupId>org.lappsgrid</groupId>
   		<artifactId>api</artifactId>
-  		<version>1.0.0</version>
+  		<version>${project.version}</version>
   	</dependency>
   	<dependency>
   		<groupId>org.lappsgrid</groupId>
