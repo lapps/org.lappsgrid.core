@@ -118,5 +118,15 @@ public class DataFactory
     {
         return new Data(Types.GATE, document);
     }
+
+   public static Data json(String text)
+   {
+      return new Data(Types.JSON, text);
+   }
+
+   public static Data jsonLD(String text)
+   {
+      return new Data(Types.JSON_LD, text);
+   }
 }
 
