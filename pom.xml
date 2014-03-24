@@ -8,7 +8,7 @@
     </parent>
     <groupId>org.lappsgrid</groupId>
     <artifactId>core</artifactId>
-    <version>1.0.2</version>
+    <version>1.1.0</version>
     <name>LAPPS Core</name>
     <description>Core classes for the LAPPS Grid</description>
     <inceptionYear>2013</inceptionYear>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.lappsgrid</groupId>
             <artifactId>discriminator</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
         </dependency>
     </dependencies>
     <distributionManagement>
