@@ -138,6 +138,21 @@ public class DataFactory
       return new Data(Types.GATE, document);
    }
 
+   public static Data gate(String document)
+   {
+      return new Data(Types.GATE, document);
+   }
+
+   public static Data oneperline(String text)
+   {
+      return new Data(Types.ONE_PER_LINE, text);
+   }
+
+   public static Data opl(String text)
+   {
+      return new Data(Types.ONE_PER_LINE, text);
+   }
+   
    public static Data json(String text)
    {
       return new Data(Types.JSON, text);
