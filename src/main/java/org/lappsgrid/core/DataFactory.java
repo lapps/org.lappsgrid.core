@@ -152,7 +152,7 @@ public class DataFactory
    {
       return new Data(Types.ONE_PER_LINE, text);
    }
-   
+
    public static Data json(String text)
    {
       return new Data(Types.JSON, text);
