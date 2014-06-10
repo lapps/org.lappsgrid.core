@@ -18,6 +18,7 @@ package org.lappsgrid.core;
 
 import org.lappsgrid.api.Data;
 import org.lappsgrid.discriminator.Types;
+import org.lappsgrid.discriminator.Uri;
 
 /**
  * A {@link org.lappsgrid.api.Data Data} object for returning ERROR conditions
@@ -32,7 +33,7 @@ public class DataError extends Data
    
    public DataError(String message)
    {
-      super(Types.ERROR, message);
+      super(Uri.ERROR, message);
    }
 
 }

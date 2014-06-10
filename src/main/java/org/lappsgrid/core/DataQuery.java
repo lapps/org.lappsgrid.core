@@ -18,6 +18,7 @@ package org.lappsgrid.core;
 
 import org.lappsgrid.api.Data;
 import org.lappsgrid.discriminator.Types;
+import org.lappsgrid.discriminator.Uri;
 
 /**
  * Queries over {@link org.lappsgrid.api.DataSource DataSource} to select matching documents.
@@ -33,12 +34,11 @@ public class DataQuery extends Data {
   private static final long serialVersionUID = 8009560790223408090L;
 
   public DataQuery(){
-    super(Types.QUERY);
+    super(Uri.QUERY);
   }
   
   public DataQuery(String queryStr){
-    this();
-    setPayload(queryStr);
+    super(Uri.QUERY, queryStr);
   }
   
 }

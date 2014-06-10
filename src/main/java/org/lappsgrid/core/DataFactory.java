@@ -17,7 +17,7 @@
 package org.lappsgrid.core;
 
 import org.lappsgrid.api.Data;
-import org.lappsgrid.discriminator.Types;
+import org.lappsgrid.discriminator.Uri;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -39,12 +39,12 @@ public class DataFactory
 
    public static Data ok()
    {
-      return new Data(Types.OK);
+      return new Data(Uri.OK);
    }
 
    public static Data error(String errorMessage)
    {
-      return new Data(Types.ERROR, errorMessage);
+      return new Data(Uri.ERROR, errorMessage);
    }
 
    public static Data error(Throwable error)
@@ -52,7 +52,7 @@ public class DataFactory
       StringWriter swriter = new StringWriter();
       PrintWriter writer = new PrintWriter(swriter);
       error.printStackTrace(writer);
-      return new Data(Types.ERROR, swriter.toString());
+      return new Data(Uri.ERROR, swriter.toString());
    }
 
    public static Data error(String message, Throwable error)
@@ -61,41 +61,41 @@ public class DataFactory
       PrintWriter writer = new PrintWriter(swriter);
       writer.println(message);
       error.printStackTrace(writer);
-      return new Data(Types.ERROR, swriter.toString());
+      return new Data(Uri.ERROR, swriter.toString());
    }
 
    public static Data query(String queryString)
    {
-      return new Data(Types.QUERY, queryString);
+      return new Data(Uri.QUERY, queryString);
    }
 
 //   public static Data jquery(String queryString) {
-//      return new Data(Types.QUERY_JQUERY, queryString);
+//      return new Data(URI.QUERY_JQUERY, queryString);
 //   }
 
 //   public static Data lucene(String queryString) {
-//      return new Data(Types.LUCENE, queryString);
+//      return new Data(URI.LUCENE, queryString);
 //   }
 //
 //   public static Data regex(String regex) {
-//      return new Data(Types.QUERY_REGEX, regex);
+//      return new Data(URI.QUERY_REGEX, regex);
 //   }
 
    public static Data get(String id)
    {
-      return new Data(Types.GET, id);
+      return new Data(Uri.GET, id);
    }
 
    public static Data list()
    {
-      return new Data(Types.LIST);
+      return new Data(Uri.LIST);
    }
 
    public static Data index(String[] items)
    {
       if (items.length == 0)
       {
-         return new Data(Types.INDEX, "");
+         return new Data(Uri.INDEX, "");
       }
       StringBuilder buffer = new StringBuilder();
       buffer.append(items[0]);
@@ -104,12 +104,12 @@ public class DataFactory
          buffer.append(" ");
          buffer.append(items[i]);
       }
-      return new Data(Types.INDEX, buffer.toString());
+      return new Data(Uri.INDEX, buffer.toString());
    }
 
    public static Data index(String items)
    {
-      return new Data(Types.INDEX, items);
+      return new Data(Uri.INDEX, items);
    }
 
    public static Data stringList(String[] items)
@@ -120,7 +120,7 @@ public class DataFactory
          buffer.append(item);
          buffer.append('\n');
       }
-      return new Data(Types.STRING_LIST, buffer.toString());
+      return new Data(Uri.STRING_LIST, buffer.toString());
    }
 
    public static Data stringList(List<String> list)
@@ -131,52 +131,52 @@ public class DataFactory
          buffer.append(item);
          buffer.append('\n');
       }
-      return new Data(Types.STRING_LIST, buffer.toString());
+      return new Data(Uri.STRING_LIST, buffer.toString());
    }
 
    public static Data text(String text)
    {
-      return new Data(Types.TEXT, text);
+      return new Data(Uri.TEXT, text);
    }
 
    public static Data document(String document)
    {
-      return new Data(Types.DOCUMENT, document);
+      return new Data(Uri.DOCUMENT, document);
    }
 
    public static Data xml(String xml)
    {
-      return new Data(Types.XML, xml);
+      return new Data(Uri.XML, xml);
    }
 
    public static Data gateDocument(String document)
    {
-      return new Data(Types.GATE, document);
+      return new Data(Uri.GATE, document);
    }
 
    public static Data gate(String document)
    {
-      return new Data(Types.GATE, document);
+      return new Data(Uri.GATE, document);
    }
 
    public static Data oneperline(String text)
    {
-      return new Data(Types.ONE_PER_LINE, text);
+      return new Data(Uri.ONE_PER_LINE, text);
    }
 
    public static Data opl(String text)
    {
-      return new Data(Types.ONE_PER_LINE, text);
+      return new Data(Uri.ONE_PER_LINE, text);
    }
 
    public static Data json(String text)
    {
-      return new Data(Types.JSON, text);
+      return new Data(Uri.JSON, text);
    }
 
    public static Data jsonLD(String text)
    {
-      return new Data(Types.JSON_LD, text);
+      return new Data(Uri.JSON_LD, text);
    }
 }
 
