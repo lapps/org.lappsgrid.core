@@ -178,5 +178,9 @@ public class DataFactory
    {
       return new Data(Uri.JSON_LD, text);
    }
+
+   public static Data lapps(String json) { return new Data(Uri.LAPPS, json); }
+
+   public static Data meta(String json) { return new Data(Uri.META, json); }
 }
 
