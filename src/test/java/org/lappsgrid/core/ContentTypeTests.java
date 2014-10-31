@@ -91,4 +91,25 @@ public class ContentTypeTests {
 		assertTrue(type.parameters.get("schema").equals("gate"));
 		assertTrue(type.parameters.get("charset").equals("UTF-8"));
 	}
+
+	@Test
+	public void parametersTests() {
+		ContentType type = new ContentType("application/xml; charset=UTF-8; schema=gate");
+		int size = type.getParameters().size();
+		assertTrue("Wrong number of parameters: expected 2 found " + size, size == 2);
+		assertTrue("UTF-8".equals(type.getParameter("charset")));
+		assertTrue("gate".equals(type.getParameter("schema")));
+		assertTrue("application/xml".equals(type.getType()));
+		assertTrue(type.isa(ContentType.XML));
+
+		ContentType appxml = new ContentType();
+		appxml.setType("application/xml");
+		appxml.setParameter("schema", "gate");
+		appxml.setParameter("charset", "UTF-8");
+
+		assertTrue(appxml.equals(type));
+		assertTrue(type.equals(appxml));
+		assertTrue(type.isa(appxml));
+		assertTrue(appxml.isa(type));
+	}
 }

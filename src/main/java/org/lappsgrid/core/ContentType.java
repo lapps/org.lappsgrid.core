@@ -53,6 +53,9 @@ public class ContentType {
 	protected String string;
 
 	public ContentType() { }
+	public ContentType(String type) {
+		this.setType(type);
+	}
 	public ContentType(ContentType type) {
 		this.type = type.type;
 		for (Map.Entry<String,String> entry : type.parameters.entrySet())
@@ -60,9 +63,32 @@ public class ContentType {
 			this.parameters.put(entry.getKey(), entry.getValue());
 		}
 	}
+	public ContentType(String type, Map<String,String> params) {
+		this.type = type;
+		for (Map.Entry<String,String> entry : params.entrySet())
+		{
+			parameters.put(entry.getKey(), entry.getValue());
+		}
+	}
 
-	public ContentType(String type) {
-		this.setType(type);
+	public Map<String,String> getParameters()
+	{
+		return parameters;
+	}
+
+	public String getParameter(String name)
+	{
+		return parameters.get(name);
+	}
+
+	public void setParameter(String name, String value)
+	{
+		parameters.put(name, value);
+	}
+
+	public String getType()
+	{
+		return this.type;
 	}
 
 	public void setType(String type) {
@@ -85,13 +111,6 @@ public class ContentType {
 					parameters.put(key, value);
 				}
 			}
-		}
-	}
-	public ContentType(String type, Map<String,String> params) {
-		this.type = type;
-		for (Map.Entry<String,String> entry : params.entrySet())
-		{
-			parameters.put(entry.getKey(), entry.getValue());
 		}
 	}
 
