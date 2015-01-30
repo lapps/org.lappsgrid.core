@@ -16,15 +16,18 @@
  */
 package org.lappsgrid.core;
 
-import org.lappsgrid.api.Data;
-import org.lappsgrid.discriminator.Uri;
+//import org.lappsgrid.serialization.Data;
+import org.lappsgrid.discriminator.Constants;
+import org.lappsgrid.serialization.Data;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
- * A factory class for creating {@link org.lappsgrid.api.Data Data} objects
+ * A factory class for creating {@link org.lappsgrid.serialization.Data Data} objects
  * with the most commonly used types.
  *
  * @author Keith Suderman
@@ -37,36 +40,46 @@ public class DataFactory
    {
    }
 
-   public static Data ok()
+   public static String ok()
    {
-      return new Data(Uri.OK);
+      return ok(false);
    }
 
-   public static Data error(String errorMessage)
+   public static String ok(boolean pretty)
    {
-      return new Data(Uri.ERROR, errorMessage);
+      Data<String> data = new Data<String>(Constants.Uri.OK);
+      if (pretty) {
+         return data.asPrettyJson();
+      }
+      return data.asJson();
    }
 
-   public static Data error(Throwable error)
+   public static String error(String errorMessage)
+   {
+      Data<String> data = new Data<>(Constants.Uri.ERROR, errorMessage);
+      return data.asJson();
+   }
+
+   public static String error(Throwable error)
    {
       StringWriter swriter = new StringWriter();
       PrintWriter writer = new PrintWriter(swriter);
       error.printStackTrace(writer);
-      return new Data(Uri.ERROR, swriter.toString());
+      return new Data(Constants.Uri.ERROR, swriter.toString()).asJson();
    }
 
-   public static Data error(String message, Throwable error)
+   public static String error(String message, Throwable error)
    {
       StringWriter swriter = new StringWriter();
       PrintWriter writer = new PrintWriter(swriter);
       writer.println(message);
       error.printStackTrace(writer);
-      return new Data(Uri.ERROR, swriter.toString());
+      return new Data(Constants.Uri.ERROR, swriter.toString()).asJson();
    }
 
-   public static Data query(String queryString)
+   public static String query(String queryString)
    {
-      return new Data(Uri.QUERY, queryString);
+      return new Data(Constants.Uri.QUERY, queryString).asJson();
    }
 
 //   public static Data jquery(String queryString) {
@@ -81,106 +94,111 @@ public class DataFactory
 //      return new Data(URI.QUERY_REGEX, regex);
 //   }
 
-   public static Data get(String id)
+   public static String get(String id)
    {
-      return new Data(Uri.GET, id);
+      return new Data(Constants.Uri.GET, id).asJson();
    }
 
-   public static Data list()
+   public static String list()
    {
-      return new Data(Uri.LIST);
+      return new Data(Constants.Uri.LIST).asJson();
    }
 
-   public static Data index(String[] items)
+   public static String index(String[] items)
    {
       if (items.length == 0)
       {
-         return new Data(Uri.INDEX, "");
+         return new Data(Constants.Uri.STRING_LIST, "").asJson();
       }
-      StringBuilder buffer = new StringBuilder();
-      buffer.append(items[0]);
-      for (int i = 1; i < items.length; ++i)
-      {
-         buffer.append(" ");
-         buffer.append(items[i]);
-      }
-      return new Data(Uri.INDEX, buffer.toString());
+      List<String> list = Arrays.asList(items);
+      return new Data<>(Constants.Uri.STRING_LIST, list).asJson();
+//      StringBuilder buffer = new StringBuilder();
+//      buffer.append(items[0]);
+//      for (int i = 1; i < items.length; ++i)
+//      {
+//         buffer.append(" ");
+//         buffer.append(items[i]);
+//      }
+//      return new Data(Constants.Uri.INDEX, buffer.toString());
    }
 
-   public static Data index(String items)
-   {
-      return new Data(Uri.INDEX, items);
-   }
+//   public static Data index(String items)
+//   {
+//      return new Data(Constants.Uri.INDEX, items);
+//   }
 
-   public static Data stringList(String[] items)
+   public static String stringList(String[] items)
    {
-      StringBuilder buffer = new StringBuilder(4096);
-      for (String item : items)
-      {
-         buffer.append(item);
-         buffer.append('\n');
-      }
-      return new Data(Uri.STRING_LIST, buffer.toString());
+      List<String> list = Arrays.asList(items);
+      return new Data<List<String>>(Constants.Uri.STRING_LIST, list).asJson();
+//      StringBuilder buffer = new StringBuilder(4096);
+//      for (String item : items)
+//      {
+//         buffer.append(item);
+//         buffer.append('\n');
+//      }
+//      return new Data(Constants.Uri.STRING_LIST, buffer.toString());
    }
 
    public static Data stringList(List<String> list)
    {
-      StringBuilder buffer = new StringBuilder(4096);
-      for (String item : list)
-      {
-         buffer.append(item);
-         buffer.append('\n');
-      }
-      return new Data(Uri.STRING_LIST, buffer.toString());
+//      StringBuilder buffer = new StringBuilder(4096);
+//      for (String item : list)
+//      {
+//         buffer.append(item);
+//         buffer.append('\n');
+//      }
+//      return new Data(Constants.Uri.STRING_LIST, buffer.toString());
+      return new Data(Constants.Uri.STRING_LIST, list);
    }
 
-   public static Data text(String text)
+   public static String text(String text)
    {
-      return new Data(Uri.TEXT, text);
+      return new Data(Constants.Uri.TEXT, text).asJson();
    }
 
-   public static Data document(String document)
+   public static String document(String document)
    {
-      return new Data(Uri.DOCUMENT, document);
+      return new Data(Constants.Uri.DOCUMENT, document).asJson();
    }
 
-   public static Data xml(String xml)
+   public static String xml(String xml)
    {
-      return new Data(Uri.XML, xml);
+      return new Data(Constants.Uri.XML, xml).asJson();
    }
 
-   public static Data gateDocument(String document)
+   public static String gateDocument(String document)
    {
-      return new Data(Uri.GATE, document);
+      return new Data(Constants.Uri.GATE, document).asJson();
    }
 
-   public static Data gate(String document)
+   public static String gate(String document)
    {
-      return new Data(Uri.GATE, document);
+      return new Data(Constants.Uri.GATE, document).asJson();
    }
 
-   public static Data oneperline(String text)
+   public static String oneperline(String text)
    {
-      return new Data(Uri.ONE_PER_LINE, text);
+      return new Data(Constants.Uri.ONE_PER_LINE, text).asJson();
    }
 
-   public static Data opl(String text)
+   public static String opl(String text)
    {
-      return new Data(Uri.ONE_PER_LINE, text);
+      return new Data(Constants.Uri.ONE_PER_LINE, text).asJson();
    }
 
-   public static Data json(String text)
+   public static String json(String text)
    {
-      return new Data(Uri.JSON, text);
+      return new Data(Constants.Uri.JSON, text).asJson();
    }
 
-   public static Data jsonLD(String text)
+   public static String jsonLD(String text)
    {
-      return new Data(Uri.JSON_LD, text);
+      return new Data(Constants.Uri.JSON_LD, text).asJson();
    }
 
-   public static Data lapps(String json) { return new Data(Uri.LAPPS, json); }
+   public static String lapps(String json) { return new Data(Constants.Uri.LAPPS, json).asJson(); }
 
-   public static Data meta(String json) { return new Data(Uri.META, json); }
+   public static String meta(String json) { return new Data(Constants.Uri.META, json).asJson(); }
 }
 

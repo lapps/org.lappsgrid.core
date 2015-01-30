@@ -27,6 +27,8 @@ import java.util.Map;
  *      application/xml; schema=gate
  *
  * @author Keith Suderman
+ * @deprecated Use the content types defined in the Constants class from the
+ * Discriminators module.
  */
 public class ContentType {
 	// Static definitions for the most commonly used types.

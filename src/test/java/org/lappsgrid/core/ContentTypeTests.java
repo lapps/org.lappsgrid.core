@@ -13,6 +13,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * @author Keith Suderman
  */
+@Ignore
 public class ContentTypeTests {
 
 	@Test
