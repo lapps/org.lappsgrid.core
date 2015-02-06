@@ -4,11 +4,11 @@
     <parent>
         <groupId>org.lappsgrid.maven</groupId>
         <artifactId>parent-pom</artifactId>
-        <version>1.1.2</version>
+        <version>2.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>org.lappsgrid</groupId>
+    <groupId>org.lappsgrid.experimental</groupId>
     <artifactId>core</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <name>LAPPS Core</name>
     <description>Core classes for the LAPPS Grid</description>
     <inceptionYear>2013</inceptionYear>
@@ -16,19 +16,25 @@
         <finalName>${groupId}.${artifactId}-${version}</finalName>
     </build>
     <properties>
-        <lapps.api.version>1.0.1</lapps.api.version>
-        <lapps.discriminator.version>1.2.3</lapps.discriminator.version>
+        <lapps.api.version>2.0.0-SNAPSHOT</lapps.api.version>
+        <lapps.discriminator.version>2.0.0-SNAPSHOT</lapps.discriminator.version>
+        <lapps.serialization.version>2.0.0-SNAPSHOT</lapps.serialization.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.lappsgrid</groupId>
+            <groupId>org.lappsgrid.experimental</groupId>
             <artifactId>api</artifactId>
             <version>${lapps.api.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.lappsgrid</groupId>
+            <groupId>org.lappsgrid.experimental</groupId>
             <artifactId>discriminator</artifactId>
             <version>${lapps.discriminator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lappsgrid.experimental</groupId>
+            <artifactId>serialization</artifactId>
+            <version>${lapps.serialization.version}</version>
         </dependency>
     </dependencies>
     <distributionManagement>
