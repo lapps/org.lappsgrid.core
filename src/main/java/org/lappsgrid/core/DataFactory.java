@@ -102,6 +102,11 @@ public class DataFactory
       return new Data(Discriminators.Uri.LIST).asJson();
    }
 
+	public static String list(int start, int end)
+	{
+		return new org.lappsgrid.serialization.datasource.List(start, end).asJson();
+	}
+
    public static String index(String[] items)
    {
       if (items.length == 0)
