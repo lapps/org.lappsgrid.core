@@ -12,7 +12,7 @@ to create the JSON representations of common LAPPS objects.
     String json = DataFactory.error("Fatal error encountered.");
     ...
     DataSource source = ...
-    String json = source.execute(DataFactory.get("key"));
+    String json = source.execute(DataFactory.get(documentId));
 ```
 
 ## Maven
