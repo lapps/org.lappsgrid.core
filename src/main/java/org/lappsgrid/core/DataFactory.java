@@ -18,6 +18,7 @@ package org.lappsgrid.core;
 
 import org.lappsgrid.discriminator.Discriminators;
 import org.lappsgrid.serialization.Data;
+import org.lappsgrid.serialization.datasource.ListRequest;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -104,7 +105,7 @@ public class DataFactory
 
 	public static String list(int start, int end)
 	{
-		return new org.lappsgrid.serialization.datasource.List(start, end).asJson();
+		return new ListRequest(start, end).asJson();
 	}
 
    public static String index(String[] items)
