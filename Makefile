@@ -24,7 +24,7 @@ site:
 	git stash
 	mvn javadoc:javadoc
 	git checkout gh-pages
-	rm *.html
+	rm -f *.html
 	if [ -e *.ico ] ; then rm *.ico ; fi
 	if [ -e *.gif ] ; then rm *.gif ; fi
 	rm -rf org resources
