@@ -26,8 +26,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * A factory class for creating {@link org.lappsgrid.serialization.Data Data} objects
- * with the most commonly used types.
+ * A factory class for creating {@code org.lappsgrid.serialization.Data} objects
+ * for the most commonly used types.
  *
  * @author Keith Suderman
  */
@@ -135,25 +135,12 @@ public class DataFactory
    {
       List<String> list = Arrays.asList(items);
       return new Data<List<String>>(Discriminators.Uri.STRING_LIST, list).asJson();
-//      StringBuilder buffer = new StringBuilder(4096);
-//      for (String item : items)
-//      {
-//         buffer.append(item);
-//         buffer.append('\n');
-//      }
-//      return new Data(Discriminators.Uri.STRING_LIST, buffer.toString());
    }
 
-   public static Data stringList(List<String> list)
+
+   public static String stringList(List<String> list)
    {
-//      StringBuilder buffer = new StringBuilder(4096);
-//      for (String item : list)
-//      {
-//         buffer.append(item);
-//         buffer.append('\n');
-//      }
-//      return new Data(Discriminators.Uri.STRING_LIST, buffer.toString());
-      return new Data(Discriminators.Uri.STRING_LIST, list);
+      return new Data(Discriminators.Uri.STRING_LIST, list).asJson();
    }
 
    public static String text(String text)
