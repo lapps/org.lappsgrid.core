@@ -34,8 +34,8 @@
     </build>
     <properties>
         <lapps.api.version>2.0.0</lapps.api.version>
-        <lapps.discriminator.version>2.0.0</lapps.discriminator.version>
-        <lapps.serialization.version>2.0.0</lapps.serialization.version>
+        <lapps.discriminator.version>2.0.1</lapps.discriminator.version>
+        <lapps.serialization.version>2.0.0-SNAPSHOT</lapps.serialization.version>
     </properties>
     <dependencies>
         <dependency>
