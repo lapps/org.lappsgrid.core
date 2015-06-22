@@ -25,7 +25,7 @@
     </parent>
     <groupId>org.lappsgrid</groupId>
     <artifactId>core</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>2.0.1</version>
     <name>LAPPS Core</name>
     <description>Core classes for the LAPPS Grid</description>
     <inceptionYear>2013</inceptionYear>
@@ -34,8 +34,8 @@
     </build>
     <properties>
         <lapps.api.version>2.0.0</lapps.api.version>
-        <lapps.discriminator.version>2.0.0</lapps.discriminator.version>
-        <lapps.serialization.version>2.0.0</lapps.serialization.version>
+        <lapps.discriminator.version>2.0.2</lapps.discriminator.version>
+        <lapps.serialization.version>2.0.1</lapps.serialization.version>
     </properties>
     <dependencies>
         <dependency>
