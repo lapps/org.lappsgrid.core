@@ -21,6 +21,6 @@ to create the JSON representations of common LAPPS objects.
 <dependency>
 	<groupId>org.lappsgrid</groupId>
 	<artifactId>core</artifactId>
-	<version>2.0.0</version>
+	<version>2.0.2</version>
 </dependency>
 ```
