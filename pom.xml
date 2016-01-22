@@ -29,6 +29,26 @@
     <name>LAPPS Core</name>
     <description>Core classes for the LAPPS Grid</description>
     <inceptionYear>2013</inceptionYear>
+    <url>https://github.com/lapps/org.lappsgrid.core</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/lapps/org.lappsgrid.core</url>
+        <connection>scm:git:https://github.com/lapps/org.lappsgrid.core.git</connection>
+        <developerConnection>scm:git:https://github.com/lapps/org.lappsgrid.core.git</developerConnection>
+    </scm>
+    <issueManagement>
+        <url>https://github.com/lapps/org.lappsgrid.core/issues</url>
+        <system>GitHub issues</system>
+    </issueManagement>
+    <ciManagement>
+        <url>https://travis-ci.org/lapps/org.lappsgrid.core</url>
+        <system>travis</system>
+    </ciManagement>
     <build>
         <finalName>${groupId}.${artifactId}-${version}</finalName>
     </build>
