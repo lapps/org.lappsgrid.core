@@ -50,9 +50,11 @@ public class DataFactory
    public static String ok(boolean pretty)
    {
       Data<String> data = new Data<String>(Discriminators.Uri.OK);
+
       if (pretty) {
          return data.asPrettyJson();
       }
+
       return data.asJson();
    }
 
