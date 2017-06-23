@@ -5,6 +5,9 @@
 [![Master Status](http://grid.anc.org:9080/travis/svg/lapps/org.lappsgrid.core?branch=master)](https://travis-ci.org/lapps/org.lappsgrid.core)
 [![Develop Status](http://grid.anc.org:9080/travis/svg/lapps/org.lappsgrid.core?branch=develop)](https://travis-ci.org/lapps/org.lappsgrid.core)
 
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.lappsgrid/core/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/org.lappsgrid/core)
+
 Currently the `core` module only provides the `DataFactory` class that is used
 to create the JSON representations of common LAPPS objects.
 
@@ -21,6 +24,6 @@ to create the JSON representations of common LAPPS objects.
 <dependency>
 	<groupId>org.lappsgrid</groupId>
 	<artifactId>core</artifactId>
-	<version>2.0.2</version>
+	<version>2.0.3</version>
 </dependency>
 ```
