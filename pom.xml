@@ -49,9 +49,11 @@
         <url>https://travis-ci.org/lapps/org.lappsgrid.core</url>
         <system>travis</system>
     </ciManagement>
+    <!--
     <build>
-        <finalName>${groupId}.${artifactId}-${version}</finalName>
+        <finalName>${project.groupId}.${project.artifactId}-${project.version}</finalName>
     </build>
+    -->
     <dependencies>
         <dependency>
             <groupId>org.lappsgrid</groupId>
